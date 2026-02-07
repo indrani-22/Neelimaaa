@@ -237,21 +237,23 @@
   </div>
 
   <script>
-    const startDate = new Date('2026-02-07'); // change year/date if needed
+    const startDate = new Date(2026, 1, 7); // Feb 7 2026 local time
+startDate.setHours(0,0,0,0);
 
-    function openMessage(index) {
-      const today = new Date();
-      today.setHours(0,0,0,0);
+function openMessage(index) {
+  const today = new Date();
+  today.setHours(0,0,0,0);
 
-      const allowedDate = new Date(startDate);
-      allowedDate.setDate(startDate.getDate() + index);
+  const allowedDate = new Date(startDate);
+  allowedDate.setDate(startDate.getDate() + index);
 
-      if (today >= allowedDate) {
-        document.querySelectorAll('.message')[index].style.display = 'block';
-      } else {
-        alert('Not yet 💌 Come back on the right day!');
-      }
-    }
+  if (today >= allowedDate) {
+    document.querySelectorAll('.message')[index].style.display = 'block';
+  } else {
+    alert('Not yet 💌 Come back on the right day!');
+  }
+}
+
     function answerYes() {
   document.getElementById("response").innerText =
     "Yayyy 💕 I knew it! You just made my heart so happy 🥹🌸";
@@ -265,6 +267,7 @@ function answerNo() {
   </script>
 </body>
 </html>
+
 
 
 
